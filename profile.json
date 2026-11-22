@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "slug": "plv",
+  "brand": {
+    "studioName": "PLV Studio",
+    "slogan": "Build. Document. Deliver.",
+    "positioning": "个人研发工作室（Personal Engineering Studio）"
+  },
+  "author": {
+    "name": "吖飘",
+    "title": "独立开发者",
+    "bio": "把想法做成产品，把过程沉淀为资产。",
+    "location": "中国",
+    "email": "837965182@qq.com"
+  },
+  "home": {
+    "heroKicker": "Personal Engineering Studio",
+    "heroTitle": "Build. Document. Deliver.",
+    "heroSubtitle": "独立开发者的项目全生命周期展示平台",
+    "featuredSlugs": ["plv-studio"]
+  },
+  "social": [
+    {
+      "label": "Gitee",
+      "url": "https://gitee.com/plv-coding",
+      "icon": "gitee"
+    },
+    {
+      "label": "邮箱",
+      "url": "mailto:837965182@qq.com",
+      "icon": "mail"
+    }
+  ],
+  "seo": {
+    "siteUrl": "https://plv.pages.dev",
+    "defaultTitle": "PLV Studio — Build. Document. Deliver.",
+    "titleTemplate": "%s | PLV Studio",
+    "defaultDescription": "独立开发者吖飘的项目全生命周期展示平台。",
+    "ogImage": "/images/og/default.png",
+    "locale": "zh-CN"
+  },
+  "theme": {
+    "defaultMode": "system"
+  }
+}

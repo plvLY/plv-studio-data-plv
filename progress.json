@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0",
+  "updatedAt": "2026-11-22T23:40:00+08:00",
+  "projects": {
+    "plv-studio": {
+      "overallStatus": "in-progress",
+      "currentStage": 5,
+      "stages": [
+        {
+          "stage": 1,
+          "key": "planning",
+          "status": "completed",
+          "startedAt": "2026-11-19",
+          "completedAt": "2026-11-22",
+          "summary": "完成品牌定位、目标用户、架构原则与 MVP 范围。",
+          "links": [],
+          "changelog": [
+            { "date": "2026-11-22", "note": "产品规划定稿至 V2.6" }
+          ]
+        },
+        {
+          "stage": 2,
+          "key": "requirements",
+          "status": "completed",
+          "startedAt": "2026-11-22",
+          "completedAt": "2026-11-22",
+          "summary": "完成页面、生命周期、维护与非功能需求，并补齐数据契约。",
+          "links": [],
+          "changelog": [
+            { "date": "2026-11-22", "note": "需求分析 V1.2 确认" }
+          ]
+        },
+        {
+          "stage": 3,
+          "key": "design",
+          "status": "completed",
+          "startedAt": "2026-11-22",
+          "completedAt": "2026-11-22",
+          "summary": "完成设计 Token、全局组件与六个页面的 UI 规格。",
+          "links": [],
+          "changelog": [
+            { "date": "2026-11-22", "note": "产品 UI 设计 V1.1 确认" }
+          ]
+        },
+        {
+          "stage": 4,
+          "key": "architecture",
+          "status": "completed",
+          "startedAt": "2026-11-22",
+          "completedAt": "2026-11-22",
+          "summary": "完成双仓库架构、数据加载与校验、路由、构建管道与部署链路。",
+          "links": [],
+          "changelog": [
+            { "date": "2026-11-22", "note": "系统架构设计 V1.4 确认" }
+          ]
+        },
+        {
+          "stage": 5,
+          "key": "development",
+          "status": "in-progress",
+          "startedAt": "2026-11-22",
+          "completedAt": null,
+          "summary": "框架工程基线与数据契约已完成，正在实现数据加载层。",
+          "links": [],
+          "changelog": [
+            { "date": "2026-11-22", "note": "完成 T-06-01 工程基线与 T-06-02 数据契约" }
+          ]
+        },
+        {
+          "stage": 6,
+          "key": "testing",
+          "status": "planned",
+          "startedAt": null,
+          "completedAt": null,
+          "summary": "",
+          "links": [],
+          "changelog": []
+        },
+        {
+          "stage": 7,
+          "key": "deployment",
+          "status": "planned",
+          "startedAt": null,
+          "completedAt": null,
+          "summary": "",
+          "links": [],
+          "changelog": []
+        },
+        {
+          "stage": 8,
+          "key": "operations",
+          "status": "planned",
+          "startedAt": null,
+          "completedAt": null,
+          "summary": "",
+          "links": [],
+          "changelog": []
+        }
+      ]
+    }
+  }
+}

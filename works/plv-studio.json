@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "slug": "plv-studio",
+  "title": "PLV Studio",
+  "subtitle": "把研发过程本身做成可验证的产品",
+  "summary": "PLV Studio 官网的研发过程，作为第一个展示项目。",
+  "status": "in-development",
+  "category": "personal-site",
+  "tags": ["站点", "工程实践"],
+  "cover": "/images/works/plv-studio/cover.png",
+  "coverAlt": "PLV Studio 品牌标识",
+  "techStack": ["Astro 7", "TypeScript", "Tailwind CSS 4", "Cloudflare Pages"],
+  "owner": "吖飘",
+  "maintainer": "吖飘",
+  "startDate": "2026-11-19",
+  "releaseDate": null,
+  "updatedAt": "2026-11-22",
+  "star": {
+    "problem": "常见作品集只展示最终成品，读者无法判断研发过程是否真实、项目做到哪一步。",
+    "solution": "框架与数据分离，用八阶段进度、设计文档和构建期校验记录从 0 到 1 的过程。",
+    "value": "让作品、过程与进度同时可见，把每天的研发动作沉淀为可验证的公开资产。"
+  },
+  "overview": {
+    "background": "PLV Studio 是独立开发者吖飘的个人研发工作室站点，本项目即站点自身的建设过程。",
+    "goals": [
+      "用一套框架服务多个主体，数据仓库独立维护",
+      "统一八阶段进度模型，首页展示正在开发的作品",
+      "设计文档与构建期校验可公开追溯"
+    ],
+    "acceptance": [
+      "check 与 build 全部通过",
+      "新增作品只改数据即可上线",
+      "页面可访问、可分享、可被搜索引擎抓取"
+    ]
+  },
+  "architecture": {
+    "summary": "框架仓库负责 Astro 构建与渲染，数据仓库提供内容；构建期从数据站点拉取并校验，数据更新经 Deploy Hook 触发重建。",
+    "diagram": {
+      "kind": "mermaid",
+      "source": "flowchart LR\n  D[数据仓库] -->|push| DP[数据 Pages]\n  DP -->|Deploy Hook| F[框架 Pages]\n  F -->|构建期 fetch| DP\n  F --> S[静态站点]"
+    },
+    "decisions": [
+      {
+        "title": "框架与数据分离",
+        "choice": "双仓库 + 双 Pages 项目",
+        "reason": "内容更新不触碰框架代码，多主体可复用同一套实现。"
+      },
+      {
+        "title": "数据获取方式",
+        "choice": "构建期 fetch",
+        "reason": "SEO 完整、无首屏闪烁，额度可承受。"
+      }
+    ]
+  },
+  "links": [
+    {
+      "type": "repo",
+      "label": "框架仓库",
+      "url": "https://gitee.com/plv-coding/plv-studio-framework"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-01",
+      "title": "产品规划",
+      "stage": 1,
+      "order": 1,
+      "date": "2026-11-19",
+      "summary": "品牌、用户、架构原则与 MVP 范围。",
+      "file": "/documents/plv-studio/doc-01.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-02",
+      "title": "需求分析",
+      "stage": 2,
+      "order": 2,
+      "date": "2026-11-22",
+      "summary": "页面需求、八阶段生命周期、维护流程与非功能要求。",
+      "file": "/documents/plv-studio/doc-02.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-03",
+      "title": "产品设计",
+      "stage": 3,
+      "order": 3,
+      "date": "2026-11-22",
+      "summary": "设计 Token、全局组件与六个页面的 UI 规格。",
+      "file": "/documents/plv-studio/doc-03.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-04",
+      "title": "系统架构设计",
+      "stage": 4,
+      "order": 4,
+      "date": "2026-11-22",
+      "summary": "双仓库架构、数据加载与校验、路由、构建管道与部署链路。",
+      "file": "/documents/plv-studio/doc-04.md",
+      "visibility": "public"
+    }
+  ]
+}

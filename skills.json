@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "tabs": [
+    {
+      "key": "backend",
+      "label": "后端",
+      "description": "构建期数据处理与服务端思维",
+      "items": [
+        {
+          "name": "Node 构建期数据处理",
+          "summary": "在构建期完成数据拉取、超时重试、Zod 校验与派生，不引入独立后端服务。",
+          "evidence": [
+            {
+              "type": "repo",
+              "label": "框架仓库",
+              "url": "https://gitee.com/plv-coding/plv-studio-framework"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "frontend",
+      "label": "前端",
+      "description": "静态站点、组件化与设计 Token",
+      "items": [
+        {
+          "name": "Astro 7 + TypeScript + Tailwind CSS 4",
+          "summary": "静态优先的页面渲染、严格类型检查与基于 CSS 变量的设计令牌体系。",
+          "evidence": [
+            {
+              "type": "repo",
+              "label": "框架仓库",
+              "url": "https://gitee.com/plv-coding/plv-studio-framework"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "label": "AI",
+      "description": "AI 辅助研发流程",
+      "items": [
+        {
+          "name": "AI 协作的需求到交付流程",
+          "summary": "需求分析、设计、实现与校验由 AI 协作推进，决策与变更记录在文档和提交中。",
+          "evidence": [
+            {
+              "type": "repo",
+              "label": "提交记录",
+              "url": "https://gitee.com/plv-coding/plv-studio-framework/commits/master"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "engineering",
+      "label": "工程实践",
+      "description": "契约驱动与构建期校验",
+      "items": [
+        {
+          "name": "契约驱动 + 构建期校验",
+          "summary": "数据先过 Zod 契约再进入渲染，校验失败即中止构建；框架与数据分仓部署。",
+          "evidence": [
+            {
+              "type": "repo",
+              "label": "框架仓库",
+              "url": "https://gitee.com/plv-coding/plv-studio-framework"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
