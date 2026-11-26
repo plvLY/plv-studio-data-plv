@@ -4,19 +4,19 @@
   "brand": {
     "studioName": "PLV Studio",
     "slogan": "Build. Document. Deliver.",
-    "positioning": "个人研发工作室（Personal Engineering Studio）"
+    "positioning": "Technical Archive / 技术存档"
   },
   "author": {
     "name": "吖飘",
-    "title": "独立开发者",
-    "bio": "把想法做成产品，把过程沉淀为资产。",
-    "location": "中国",
+    "title": "近期在案",
+    "bio": "事物的构建，并非一蹴而就。",
+    "location": "广东·佛山",
     "email": "837965182@qq.com"
   },
   "home": {
     "heroKicker": "Personal Engineering Studio",
     "heroTitle": "Build. Document. Deliver.",
-    "heroSubtitle": "独立开发者的项目全生命周期展示平台",
+    "heroSubtitle": "将需求、推演与研发的过程整理成册。这里提供的并非答案，而是一段真实发生过的工程切片。欢迎查阅与指正。",
     "featuredSlugs": ["plv-studio"]
   },
   "social": [
