@@ -12,6 +12,9 @@ works/{slug}.md              可选补充正文
 progress.json                八阶段进度与 changelog
 skills.json                  能力与证据（可选）
 documents/{slug}/{doc-id}.md 设计文档
+engineering/index.json       工程分类、内容索引与精选标记
+engineering/{category}/*.md  工程内容正文（workflows / models / practices / standards）
+engineering/updates/index.json 工程动态记录
 images/                      封面、头像、OG 图
 _headers                     数据站点缓存与安全响应头
 ```

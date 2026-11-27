@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "1.0",
+  "categories": [
+    {
+      "id": "workflows",
+      "name": "工作流程",
+      "nameEn": "Workflow",
+      "summary": "工作如何组织、规划与推进。",
+      "href": "/engineering/workflows/",
+      "order": 1
+    },
+    {
+      "id": "development-process",
+      "name": "开发流程",
+      "nameEn": "Development Process",
+      "summary": "项目如何从需求走向交付。",
+      "href": "/engineering/workflows/development-process/",
+      "order": 2
+    },
+    {
+      "id": "models",
+      "name": "工程模型",
+      "nameEn": "Engineering Models",
+      "summary": "项目状态、阶段与交付模型。",
+      "href": "/engineering/models/",
+      "order": 3
+    },
+    {
+      "id": "practices",
+      "name": "实践方法",
+      "nameEn": "Engineering Practices",
+      "summary": "解决具体工程问题的方法。",
+      "href": "/engineering/practices/",
+      "order": 4
+    },
+    {
+      "id": "standards",
+      "name": "技术架构与规范",
+      "nameEn": "Technical Architecture & Standards",
+      "summary": "系统架构、数据设计、API 约定与开发规范。",
+      "href": "/engineering/standards/",
+      "order": 5,
+      "wide": true
+    }
+  ],
+  "items": [
+    {
+      "id": "work-process",
+      "title": "工作流程",
+      "category": "workflows",
+      "summary": "从目标确认到复盘，工作室如何组织、拆解与推进日常工作。",
+      "path": "workflows/work-process.md",
+      "status": "published",
+      "featured": true,
+      "order": 1,
+      "updatedAt": "2026-11-27",
+      "steps": [
+        {
+          "title": "目标与需求确认",
+          "summary": "先对齐要解决的问题和交付边界，再决定是否开始。"
+        },
+        {
+          "title": "任务拆解与规划",
+          "summary": "把目标拆成可独立验收的小任务，明确顺序与依赖。"
+        },
+        {
+          "title": "执行与过程管理",
+          "summary": "按任务推进，过程记录与状态同步保持可追溯。"
+        },
+        {
+          "title": "成果检查与复盘",
+          "summary": "对照验收标准检查结果，沉淀问题与可复用经验。"
+        }
+      ]
+    },
+    {
+      "id": "development-process",
+      "title": "开发流程",
+      "category": "workflows",
+      "summary": "一个项目从需求分析到交付验收的完整构建过程。",
+      "path": "workflows/development-process.md",
+      "status": "published",
+      "featured": true,
+      "order": 2,
+      "updatedAt": "2026-11-27",
+      "steps": [
+        {
+          "title": "需求分析与定义",
+          "summary": "明确问题、目标、范围与验收标准。"
+        },
+        {
+          "title": "方案设计与架构规划",
+          "summary": "确定技术路线、系统结构与关键取舍。"
+        },
+        {
+          "title": "开发实现",
+          "summary": "按拆分后的任务逐步实现并保持可验证。"
+        },
+        {
+          "title": "测试与验证",
+          "summary": "覆盖关键路径、边界条件与回归场景。"
+        },
+        {
+          "title": "交付与验收",
+          "summary": "部署上线，对照验收标准完成确认。"
+        },
+        {
+          "title": "运行与迭代",
+          "summary": "按项目实际需要启用，持续观察与改进。"
+        }
+      ]
+    },
+    {
+      "id": "project-lifecycle",
+      "title": "项目生命周期模型",
+      "category": "models",
+      "summary": "定义项目从规划到交付再到运行的阶段结构。",
+      "path": "models/project-lifecycle.md",
+      "status": "published",
+      "featured": true,
+      "order": 1,
+      "updatedAt": "2026-11-27",
+      "highlights": ["规划", "设计", "开发", "交付", "运行"]
+    },
+    {
+      "id": "project-status",
+      "title": "项目状态模型",
+      "category": "models",
+      "summary": "用统一状态描述项目当前处于哪个阶段，而不是凭感觉判断进度。",
+      "path": "models/project-status.md",
+      "status": "published",
+      "featured": true,
+      "order": 2,
+      "updatedAt": "2026-11-27",
+      "highlights": ["规划中", "开发中", "已上线", "已归档"]
+    },
+    {
+      "id": "delivery-form",
+      "title": "交付形态模型",
+      "category": "models",
+      "summary": "区分线上服务、静态站点、工具脚本与内容文档的交付方式。",
+      "path": "models/delivery-form.md",
+      "status": "published",
+      "featured": true,
+      "order": 3,
+      "updatedAt": "2026-11-27",
+      "highlights": ["线上服务", "静态站点", "工具脚本", "内容文档"]
+    },
+    {
+      "id": "requirements-planning",
+      "title": "需求拆解与规划",
+      "category": "practices",
+      "summary": "把模糊想法拆成可执行、可验收的任务序列。",
+      "path": "practices/requirements-planning.md",
+      "status": "published",
+      "featured": true,
+      "order": 1,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "agent-workflow",
+      "title": "Agent 工作流设计",
+      "category": "practices",
+      "summary": "让 Agent 在明确边界内执行任务，并保留人工检查点。",
+      "path": "practices/agent-workflow.md",
+      "status": "published",
+      "featured": true,
+      "order": 2,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "testing-quality",
+      "title": "测试与质量验证",
+      "category": "practices",
+      "summary": "以关键路径和边界条件为核心，建立最小但有效的验证闭环。",
+      "path": "practices/testing-quality.md",
+      "status": "published",
+      "featured": true,
+      "order": 3,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "troubleshooting",
+      "title": "问题排查与优化",
+      "category": "practices",
+      "summary": "先复现、再定位、后修复，避免凭猜测改代码。",
+      "path": "practices/troubleshooting.md",
+      "status": "published",
+      "featured": true,
+      "order": 4,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "architecture-design",
+      "title": "系统架构与设计",
+      "category": "standards",
+      "summary": "从边界、数据流与部署方式出发，确定系统的基本结构。",
+      "path": "standards/architecture-design.md",
+      "status": "published",
+      "featured": true,
+      "order": 1,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "data-standards",
+      "title": "数据结构与内容规范",
+      "category": "standards",
+      "summary": "用稳定契约约束数据结构，让内容增长不依赖页面改动。",
+      "path": "standards/data-standards.md",
+      "status": "published",
+      "featured": true,
+      "order": 2,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "api-standards",
+      "title": "API 与开发规范",
+      "category": "standards",
+      "summary": "统一接口约定、命名方式与错误处理，降低协作成本。",
+      "path": "standards/api-standards.md",
+      "status": "published",
+      "featured": true,
+      "order": 3,
+      "updatedAt": "2026-11-27"
+    },
+    {
+      "id": "tooling",
+      "title": "工程工具与基础设施",
+      "category": "standards",
+      "summary": "构建、校验、部署与监控构成项目运行的基础设施。",
+      "path": "standards/tooling.md",
+      "status": "published",
+      "featured": true,
+      "order": 4,
+      "updatedAt": "2026-11-27"
+    }
+  ]
+}

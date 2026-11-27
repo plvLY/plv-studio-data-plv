@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "updates": [
+    {
+      "id": "engineering-module-launch",
+      "title": "工程模块上线",
+      "summary": "建立工作流程、开发流程、工程模型、实践方法与技术架构规范五类内容。",
+      "date": "2026-11-27",
+      "category": "workflows",
+      "href": "/engineering/"
+    },
+    {
+      "id": "project-lifecycle-model",
+      "title": "新增项目生命周期模型",
+      "summary": "统一描述项目从规划、设计、开发到交付与运行的阶段结构。",
+      "date": "2026-11-27",
+      "category": "models",
+      "href": "/engineering/models/project-lifecycle/"
+    },
+    {
+      "id": "data-contract-standards",
+      "title": "补充数据结构与内容规范",
+      "summary": "明确数据仓库与框架仓库的职责边界，以及内容契约的校验方式。",
+      "date": "2026-11-27",
+      "category": "standards",
+      "href": "/engineering/standards/data-standards/"
+    }
+  ]
+}
