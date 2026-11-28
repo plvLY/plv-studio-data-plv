@@ -3,6 +3,7 @@
   "id": "plv-studio",
   "slug": "plv-studio",
   "title": "PLV Studio",
+  "code": "PLV-V2-DEV-006",
   "subtitle": "把研发过程本身做成可验证的产品",
   "summary": "PLV Studio 官网的研发过程，作为第一个展示项目。",
   "description": "PLV Studio 是独立开发者吖飘的个人研发工作室站点，本项目即站点自身的建设过程。内容仓库与框架仓库分离，构建期从数据站点拉取内容并完成契约校验，任何一次内容更新都能被追溯到对应的阶段与变更记录。",
@@ -19,7 +20,7 @@
   "releasedAt": null,
   "updatedAt": "2026-11-28",
   "cover": "/images/projects/plv-studio/cover.png",
-  "coverAlt": "PLV Studio 品牌标识",
+  "coverAlt": "抽象几何图形：网格、圆弧与红色方块，表达从想法到交付",
   "overview": {
     "background": "PLV Studio 是独立开发者吖飘的个人研发工作室站点，本项目即站点自身的建设过程。",
     "problem": "常见作品集只展示最终成品，读者无法判断研发过程是否真实、项目做到哪一步。",

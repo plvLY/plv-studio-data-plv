@@ -3,6 +3,7 @@
   "id": "plv-site-monitor",
   "slug": "plv-site-monitor",
   "title": "PLV Site Monitor",
+  "code": "PLV-V1-DEV-009",
   "subtitle": "面向独立开发者的轻量级网站访问统计平台",
   "summary": "自建埋点 SDK、Serverless 采集接口与 Vue 管理后台，记录并分析多个站点的访问数据。",
   "description": "PLV Site Monitor 是面向个人使用的网站访问统计与站点管理系统。Tracker SDK 在浏览器采集页面事件，Serverless 采集接口完成站点校验、来源校验与限流后写入 PostgreSQL，管理后台通过查询接口读取聚合指标并提供六个分析页面。",

@@ -4,7 +4,8 @@
   "brand": {
     "studioName": "PLV Studio",
     "slogan": "Build. Document. Deliver.",
-    "positioning": "Technical Archive / 技术存档"
+    "positioning": "Technical Archive / 技术存档",
+    "intro": "PLV Studio 是一个以技术存档为方向的个人研发工作室：把一个想法从需求、设计推进到实现与交付，并把过程中的决策、取舍和验证结果一并记录下来。项目负责产出可用的成果，工程实践负责把可复用的方法与规范沉淀下来，两者互相支撑。"
   },
   "author": {
     "name": "吖飘",
@@ -15,8 +16,8 @@
   },
   "home": {
     "heroKicker": "Personal Engineering Studio",
-    "heroTitle": "Build. Document. Deliver.",
-    "heroSubtitle": "从想法、设计到工程实现。记录每一次探索、每一个决策，以及最终交付的成果。"
+    "heroTitle": "事物的构建，并非一蹴而就。",
+    "heroSubtitle": "从概念到落地，从探索到交付。"
   },
   "social": [
     {
