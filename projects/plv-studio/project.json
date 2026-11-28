@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "2.0",
+  "id": "plv-studio",
+  "slug": "plv-studio",
+  "title": "PLV Studio",
+  "subtitle": "把研发过程本身做成可验证的产品",
+  "summary": "PLV Studio 官网的研发过程，作为第一个展示项目。",
+  "description": "PLV Studio 是独立开发者吖飘的个人研发工作室站点，本项目即站点自身的建设过程。内容仓库与框架仓库分离，构建期从数据站点拉取内容并完成契约校验，任何一次内容更新都能被追溯到对应的阶段与变更记录。",
+  "type": "web",
+  "status": "developing",
+  "visibility": "public",
+  "featured": true,
+  "order": 1,
+  "techStack": ["Astro 7", "TypeScript", "Tailwind CSS 4", "Cloudflare Pages"],
+  "tags": ["站点", "工程实践"],
+  "owner": "吖飘",
+  "maintainer": "吖飘",
+  "startedAt": "2026-11-19",
+  "releasedAt": null,
+  "updatedAt": "2026-11-28",
+  "cover": "/images/projects/plv-studio/cover.png",
+  "coverAlt": "PLV Studio 品牌标识",
+  "overview": {
+    "background": "PLV Studio 是独立开发者吖飘的个人研发工作室站点，本项目即站点自身的建设过程。",
+    "problem": "常见作品集只展示最终成品，读者无法判断研发过程是否真实、项目做到哪一步。",
+    "solution": "框架与数据分离，用阶段进度、设计文档和构建期校验记录从 0 到 1 的过程。",
+    "value": "让作品、过程与进度同时可见，把每天的研发动作沉淀为可验证的公开资产。",
+    "audience": "需要了解独立开发者实际工作方式的技术同行与潜在合作方。",
+    "scope": "包含双仓数据架构、契约驱动的构建期校验、六段项目生命周期展示与工程内容沉淀；不含多用户体系与后台管理系统。",
+    "goals": [
+      "用一套框架服务多个主体，数据仓库独立维护",
+      "统一六段阶段进度模型，首页展示正在开发的项目",
+      "设计文档与构建期校验可公开追溯"
+    ],
+    "acceptance": [
+      "check 与 build 全部通过",
+      "新增项目只改数据即可上线",
+      "页面可访问、可分享、可被搜索引擎抓取"
+    ]
+  },
+  "features": [
+    {
+      "title": "双仓内容与框架分离",
+      "summary": "数据仓库独立维护内容，框架仓库只负责渲染，内容更新不触碰框架代码。"
+    },
+    {
+      "title": "构建期契约校验",
+      "summary": "所有内容先过 Zod 契约再进入页面渲染，校验失败直接中止构建。"
+    },
+    {
+      "title": "六段阶段进度可视化",
+      "summary": "按需求分析、方案设计、开发实现、测试验证、交付验收、运行与迭代记录真实推进情况。"
+    },
+    {
+      "title": "设计文档公开可追溯",
+      "summary": "需求、架构与实施文档随项目一起公开，读者可核对每个结论的来源。"
+    }
+  ],
+  "architecture": {
+    "summary": "框架仓库负责 Astro 构建与渲染，数据仓库提供内容；构建期从数据站点拉取并校验，数据更新经 Deploy Hook 触发重建。",
+    "diagram": {
+      "kind": "mermaid",
+      "source": "flowchart LR\n  D[数据仓库] -->|push| DP[数据 Pages]\n  DP -->|Deploy Hook| F[框架 Pages]\n  F -->|构建期 fetch| DP\n  F --> S[静态站点]"
+    },
+    "decisions": [
+      {
+        "title": "框架与数据分离",
+        "choice": "双仓库 + 双 Pages 项目",
+        "reason": "内容更新不触碰框架代码，多主体可复用同一套实现。"
+      },
+      {
+        "title": "数据获取方式",
+        "choice": "构建期 fetch",
+        "reason": "SEO 完整、无首屏闪烁，额度可承受。"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "requirements",
+      "name": "需求分析",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-19",
+      "completedAt": "2026-11-22",
+      "summary": "完成品牌定位、目标用户、架构原则与 MVP 范围，并补齐页面、生命周期、维护与非功能需求。"
+    },
+    {
+      "id": "design",
+      "name": "方案设计",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-22",
+      "completedAt": "2026-11-22",
+      "summary": "完成设计 Token、全局组件与页面 UI 规格，以及双仓库架构、数据加载与校验方案。"
+    },
+    {
+      "id": "development",
+      "name": "开发实现",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-22",
+      "completedAt": "2026-11-23",
+      "summary": "框架工程基线与数据契约完成，数据加载层、页面渲染与组件实现到位。"
+    },
+    {
+      "id": "testing",
+      "name": "测试验证",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-23",
+      "completedAt": "2026-11-23",
+      "summary": "完成类型检查、数据校验与响应式、可访问性检查。"
+    },
+    {
+      "id": "delivery",
+      "name": "交付验收",
+      "status": "in_progress",
+      "applicable": true,
+      "startedAt": "2026-11-23",
+      "completedAt": null,
+      "summary": "部署配置与上线验收进行中。"
+    },
+    {
+      "id": "iteration",
+      "name": "运行与迭代",
+      "status": "pending",
+      "applicable": true,
+      "startedAt": null,
+      "completedAt": null,
+      "summary": ""
+    }
+  ],
+  "delivery": {
+    "form": "source_code",
+    "summary": "以源代码与可复现的构建流程交付，内容与框架分仓维护。",
+    "version": "v2.1",
+    "entries": [
+      {
+        "label": "框架仓库",
+        "url": "https://gitee.com/plv-coding/plv-studio-framework"
+      }
+    ]
+  },
+  "links": [
+    {
+      "type": "repo",
+      "label": "框架仓库",
+      "url": "https://gitee.com/plv-coding/plv-studio-framework"
+    }
+  ],
+  "engineeringRefs": [
+    { "category": "models", "id": "project-lifecycle" },
+    { "category": "models", "id": "project-status" },
+    { "category": "workflows", "id": "development-process" },
+    { "category": "practices", "id": "requirements-planning" },
+    { "category": "standards", "id": "data-standards" }
+  ],
+  "documents": [
+    {
+      "id": "doc-01",
+      "title": "产品规划",
+      "stage": "requirements",
+      "order": 1,
+      "date": "2026-11-19",
+      "summary": "品牌、用户、架构原则与 MVP 范围。",
+      "file": "/projects/plv-studio/documents/doc-01.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-02",
+      "title": "需求分析",
+      "stage": "requirements",
+      "order": 2,
+      "date": "2026-11-22",
+      "summary": "页面需求、项目生命周期、维护流程与非功能要求。",
+      "file": "/projects/plv-studio/documents/doc-02.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-03",
+      "title": "产品设计",
+      "stage": "design",
+      "order": 3,
+      "date": "2026-11-22",
+      "summary": "设计 Token、全局组件与六个页面的 UI 规格。",
+      "file": "/projects/plv-studio/documents/doc-03.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-04",
+      "title": "系统架构设计",
+      "stage": "design",
+      "order": 4,
+      "date": "2026-11-22",
+      "summary": "双仓库架构、数据加载与校验、路由、构建管道与部署链路。",
+      "file": "/projects/plv-studio/documents/doc-04.md",
+      "visibility": "public"
+    }
+  ]
+}

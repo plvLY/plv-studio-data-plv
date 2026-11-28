@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "2.0",
+  "projects": [
+    {
+      "id": "plv-studio",
+      "slug": "plv-studio",
+      "title": "PLV Studio",
+      "summary": "PLV Studio 官网的研发过程，作为第一个展示项目。",
+      "type": "web",
+      "status": "developing",
+      "featured": true,
+      "visibility": "public",
+      "order": 1,
+      "updatedAt": "2026-11-28"
+    },
+    {
+      "id": "plv-site-monitor",
+      "slug": "plv-site-monitor",
+      "title": "PLV Site Monitor",
+      "summary": "自建埋点 SDK、Serverless 采集接口与 Vue 管理后台，记录并分析多个站点的访问数据。",
+      "type": "web",
+      "status": "iterating",
+      "featured": false,
+      "visibility": "public",
+      "order": 2,
+      "updatedAt": "2026-11-24"
+    }
+  ]
+}

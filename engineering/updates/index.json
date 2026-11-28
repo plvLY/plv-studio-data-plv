@@ -2,6 +2,14 @@
   "schemaVersion": "1.0",
   "updates": [
     {
+      "id": "project-module-v2-1",
+      "title": "项目模块完成 V2.1 优化",
+      "summary": "项目数据改为目录式结构，状态改为七态，阶段改为六段并支持跳过与不适用，新增项目类型、核心功能、交付形态与关联工程。",
+      "date": "2026-11-28",
+      "category": "models",
+      "href": "/engineering/models/project-lifecycle/"
+    },
+    {
       "id": "engineering-module-launch",
       "title": "工程模块上线",
       "summary": "建立工作流程、开发流程、工程模型、实践方法与技术架构规范五类内容。",

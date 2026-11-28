@@ -114,13 +114,13 @@
       "id": "project-lifecycle",
       "title": "项目生命周期模型",
       "category": "models",
-      "summary": "定义项目从规划到交付再到运行的阶段结构。",
+      "summary": "定义项目从需求分析到运行迭代的六段阶段结构。",
       "path": "models/project-lifecycle.md",
       "status": "published",
       "featured": true,
       "order": 1,
-      "updatedAt": "2026-11-27",
-      "highlights": ["规划", "设计", "开发", "交付", "运行"]
+      "updatedAt": "2026-11-28",
+      "highlights": ["需求分析", "方案设计", "开发实现", "测试验证", "交付验收", "运行与迭代"]
     },
     {
       "id": "project-status",
@@ -131,20 +131,20 @@
       "status": "published",
       "featured": true,
       "order": 2,
-      "updatedAt": "2026-11-27",
-      "highlights": ["规划中", "开发中", "已上线", "已归档"]
+      "updatedAt": "2026-11-28",
+      "highlights": ["规划中", "开发中", "已交付", "持续迭代", "已归档"]
     },
     {
       "id": "delivery-form",
       "title": "交付形态模型",
       "category": "models",
-      "summary": "区分线上服务、静态站点、工具脚本与内容文档的交付方式。",
+      "summary": "区分 Web 部署、本地软件、Agent 接口、软件包、源码等交付方式。",
       "path": "models/delivery-form.md",
       "status": "published",
       "featured": true,
       "order": 3,
-      "updatedAt": "2026-11-27",
-      "highlights": ["线上服务", "静态站点", "工具脚本", "内容文档"]
+      "updatedAt": "2026-11-28",
+      "highlights": ["Web 部署应用", "本地运行软件", "Agent / API 服务", "软件包", "源代码"]
     },
     {
       "id": "requirements-planning",

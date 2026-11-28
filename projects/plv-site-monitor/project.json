@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "2.0",
+  "id": "plv-site-monitor",
+  "slug": "plv-site-monitor",
+  "title": "PLV Site Monitor",
+  "subtitle": "面向独立开发者的轻量级网站访问统计平台",
+  "summary": "自建埋点 SDK、Serverless 采集接口与 Vue 管理后台，记录并分析多个站点的访问数据。",
+  "description": "PLV Site Monitor 是面向个人使用的网站访问统计与站点管理系统。Tracker SDK 在浏览器采集页面事件，Serverless 采集接口完成站点校验、来源校验与限流后写入 PostgreSQL，管理后台通过查询接口读取聚合指标并提供六个分析页面。",
+  "type": "web",
+  "status": "iterating",
+  "visibility": "public",
+  "featured": false,
+  "order": 2,
+  "techStack": [
+    "TypeScript",
+    "Vue 3",
+    "Netlify Functions",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "Tailwind CSS",
+    "ECharts",
+    "Vitest"
+  ],
+  "tags": ["网站统计", "数据可视化", "Serverless"],
+  "owner": "吖飘",
+  "maintainer": "吖飘",
+  "startedAt": "2026-11-04",
+  "releasedAt": "2026-11-19",
+  "updatedAt": "2026-11-24",
+  "cover": "/images/projects/plv-site-monitor/cover.jpg",
+  "coverAlt": "PLV Site Monitor 数据分析后台",
+  "overview": {
+    "background": "PLV Site Monitor 是面向个人使用的网站访问统计与站点管理系统，首期以 Serverless 为主要部署方向。",
+    "problem": "第三方统计依赖外部平台，个人站点难以同时掌握多个站点的访问数据与采集链路。",
+    "solution": "自建 Tracker SDK、Serverless 采集接口与 Vue 管理后台，用 PostgreSQL 保存并聚合 PV、UV、Sessions 等指标。",
+    "value": "让多个站点的访问数据回到自己手里，同时把采集、校验、聚合和可视化完整记录为一个可复用作品。",
+    "audience": "需要同时观察多个自建站点、并希望完全掌握采集链路的独立开发者与小型站点站长。",
+    "scope": "覆盖埋点采集、事件校验、限流、指标聚合与六个分析页面；不含多租户计费、短信告警与第三方广告归因。",
+    "goals": [
+      "用同一个后台管理多个站点与独立 siteId",
+      "统计 PV、UV、Sessions、Bounce Rate 等核心指标",
+      "提供 Overview、Trends、Pages、Sources、Devices、Locations 六个分析页面"
+    ],
+    "acceptance": [
+      "Tracker 能稳定上报页面浏览事件，采集接口返回 202",
+      "站点校验、来源校验与限流生效",
+      "Dashboard 指标与原始事件一致",
+      "部署链路可回滚，凭据不入库"
+    ]
+  },
+  "features": [
+    {
+      "title": "轻量 Tracker SDK",
+      "summary": "浏览器端脚本按站点 ID 上报页面浏览事件，不依赖第三方统计平台。"
+    },
+    {
+      "title": "服务端采集校验",
+      "summary": "采集接口完成站点校验、来源校验与固定窗口限流，非法请求直接拒绝。"
+    },
+    {
+      "title": "多站点统一管理",
+      "summary": "每个站点拥有独立 siteId 与限流配置，在一个后台内统一查看。"
+    },
+    {
+      "title": "六页分析视图",
+      "summary": "Overview、Trends、Pages、Sources、Devices、Locations 覆盖流量构成与趋势。"
+    },
+    {
+      "title": "指标聚合存储",
+      "summary": "基于 PostgreSQL 与 Drizzle ORM 保存原始事件并聚合核心指标。"
+    }
+  ],
+  "architecture": {
+    "summary": "Tracker SDK 在浏览器采集页面事件，Netlify Functions 校验并写入 PostgreSQL，Vue Dashboard 通过管理接口查询聚合数据。",
+    "diagram": {
+      "kind": "mermaid",
+      "source": "flowchart LR\n  T[Tracker SDK] -->|POST /api/collect| A[Netlify Functions]\n  A -->|Drizzle ORM| DB[(PostgreSQL)]\n  D[Vue Dashboard] -->|管理接口| A"
+    },
+    "decisions": [
+      {
+        "title": "采集方式",
+        "choice": "自建轻量 Tracker",
+        "reason": "不依赖第三方脚本，数据与采集链路可控。"
+      },
+      {
+        "title": "后端形态",
+        "choice": "Netlify Functions + PostgreSQL",
+        "reason": "Serverless 部署简单，按需扩展，便于个人维护。"
+      },
+      {
+        "title": "权限模型",
+        "choice": "单超级管理员",
+        "reason": "首期只服务个人多站点管理，避免过度设计。"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "requirements",
+      "name": "需求分析",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-04",
+      "completedAt": "2026-11-05",
+      "summary": "明确多站点统计、单管理员与 Serverless 部署范围，完成采集事件、统计指标与安全约束定义。"
+    },
+    {
+      "id": "design",
+      "name": "方案设计",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-05",
+      "completedAt": "2026-11-06",
+      "summary": "完成 Vue 3 Dashboard、统计视图与 Tracker SDK 交互设计，以及系统拓扑与技术选型。"
+    },
+    {
+      "id": "development",
+      "name": "开发实现",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-06",
+      "completedAt": "2026-11-19",
+      "summary": "Dashboard 专项已完成验收，真实数据链路完成收尾。"
+    },
+    {
+      "id": "testing",
+      "name": "测试验证",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-17",
+      "completedAt": "2026-11-19",
+      "summary": "记录已知测试证据、用户正式验收范围、生产验证和未关闭验收项。"
+    },
+    {
+      "id": "delivery",
+      "name": "交付验收",
+      "status": "completed",
+      "applicable": true,
+      "startedAt": "2026-11-19",
+      "completedAt": "2026-11-19",
+      "summary": "部署上线，功能验证正式验收。"
+    },
+    {
+      "id": "iteration",
+      "name": "运行与迭代",
+      "status": "in_progress",
+      "applicable": true,
+      "startedAt": "2026-11-19",
+      "completedAt": null,
+      "summary": "持续维护与更新站点管理能力，按真实使用情况推进。"
+    }
+  ],
+  "delivery": {
+    "form": "web_deployment",
+    "summary": "以线上 Web 部署应用交付，管理后台与采集接口可直接访问。",
+    "version": "v1.0",
+    "entries": [
+      {
+        "label": "线上地址",
+        "url": "https://plv-monitor.netlify.app"
+      },
+      {
+        "label": "源码仓库",
+        "url": "https://github.com/plvLY/PLV-Site-Monitor"
+      }
+    ]
+  },
+  "links": [
+    {
+      "type": "live",
+      "label": "线上地址",
+      "url": "https://plv-monitor.netlify.app"
+    },
+    {
+      "type": "repo",
+      "label": "源码仓库",
+      "url": "https://github.com/plvLY/PLV-Site-Monitor"
+    }
+  ],
+  "engineeringRefs": [
+    { "category": "models", "id": "project-lifecycle" },
+    { "category": "models", "id": "delivery-form" },
+    { "category": "practices", "id": "testing-quality" },
+    { "category": "practices", "id": "troubleshooting" },
+    { "category": "standards", "id": "api-standards" },
+    { "category": "standards", "id": "architecture-design" }
+  ],
+  "documents": [
+    {
+      "id": "doc-02",
+      "title": "产品需求",
+      "stage": "requirements",
+      "order": 2,
+      "date": "2026-11-05",
+      "summary": "定义产品定位、目标场景、功能范围、指标口径、非目标及已确认的产品约束。",
+      "file": "/projects/plv-site-monitor/documents/doc-02.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-04",
+      "title": "系统架构设计",
+      "stage": "design",
+      "order": 4,
+      "date": "2026-11-06",
+      "summary": "记录系统拓扑、技术选型、数据库与隐私规则、Tracker/Collect、安全边界及生产部署约束。",
+      "file": "/projects/plv-site-monitor/documents/doc-04.md",
+      "visibility": "public"
+    },
+    {
+      "id": "doc-05",
+      "title": "开发实施",
+      "stage": "development",
+      "order": 5,
+      "date": "2026-11-19",
+      "summary": "按可确认的开发阶段、技术决策与验收记录汇总项目进度。",
+      "file": "/projects/plv-site-monitor/documents/doc-05.md",
+      "visibility": "public"
+    }
+  ]
+}

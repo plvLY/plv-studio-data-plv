@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "2.0",
+  "updatedAt": "2026-11-28",
+  "entries": [
+    {
+      "id": "plv-studio-start",
+      "date": "2026-11-19",
+      "title": "项目启动",
+      "type": "project-start",
+      "note": "确定以站点自身建设作为第一个展示项目，明确品牌定位、目标用户与首版范围。",
+      "version": null
+    },
+    {
+      "id": "plv-studio-requirements-v1.2",
+      "date": "2026-11-22",
+      "title": "需求分析定稿",
+      "type": "stage-completed",
+      "note": "需求分析 V1.2 确认，覆盖页面需求、项目生命周期、维护流程与非功能要求。",
+      "version": "v1.2"
+    },
+    {
+      "id": "plv-studio-planning-v2.6",
+      "date": "2026-11-22",
+      "title": "产品规划定稿",
+      "type": "stage-completed",
+      "note": "产品规划定稿至 V2.6，锁定 MVP 范围与架构原则。",
+      "version": "v2.6"
+    },
+    {
+      "id": "plv-studio-design-v1.1",
+      "date": "2026-11-22",
+      "title": "产品 UI 设计确认",
+      "type": "stage-completed",
+      "note": "产品 UI 设计 V1.1 确认，确定设计 Token、全局组件与页面规格。",
+      "version": "v1.1"
+    },
+    {
+      "id": "plv-studio-architecture-v1.4",
+      "date": "2026-11-22",
+      "title": "系统架构设计确认",
+      "type": "architecture-change",
+      "note": "系统架构设计 V1.4 确认，确定双仓库架构、构建期数据拉取与部署链路。",
+      "version": "v1.4"
+    },
+    {
+      "id": "plv-studio-baseline",
+      "date": "2026-11-22",
+      "title": "完成工程基线与数据契约",
+      "type": "feature-release",
+      "note": "完成 T-06-01 工程基线与 T-06-02 数据契约。",
+      "version": null
+    },
+    {
+      "id": "plv-studio-development-done",
+      "date": "2026-11-23",
+      "title": "完成开发实现",
+      "type": "stage-completed",
+      "note": "数据加载层、页面渲染与组件实现完成，进入测试验证阶段。",
+      "version": null
+    },
+    {
+      "id": "plv-studio-testing-done",
+      "date": "2026-11-23",
+      "title": "完成测试验证",
+      "type": "stage-completed",
+      "note": "类型检查、数据校验与响应式、可访问性检查全部通过。",
+      "version": null
+    },
+    {
+      "id": "plv-studio-delivery",
+      "date": "2026-11-23",
+      "title": "进入交付验收阶段",
+      "type": "delivery",
+      "note": "部署配置与上线验收进行中。",
+      "version": null
+    }
+  ]
+}

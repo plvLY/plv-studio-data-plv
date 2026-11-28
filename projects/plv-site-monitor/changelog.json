@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "2.0",
+  "updatedAt": "2026-11-24",
+  "entries": [
+    {
+      "id": "plv-site-monitor-start",
+      "date": "2026-11-04",
+      "title": "项目启动",
+      "type": "project-start",
+      "note": "确立面向个人开发者与独立站长的综合网站观测平台方向，覆盖访问统计、IP 明细与网站监控。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-requirements",
+      "date": "2026-11-05",
+      "title": "产品需求定稿",
+      "type": "stage-completed",
+      "note": "初始产品需求内容形成，明确功能范围、指标口径与安全约束。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-design",
+      "date": "2026-11-05",
+      "title": "完成界面与交互设计",
+      "type": "stage-completed",
+      "note": "完成 Dashboard、统计视图与 Tracker SDK 的交互设计。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-architecture",
+      "date": "2026-11-06",
+      "title": "系统架构设计产出",
+      "type": "architecture-change",
+      "note": "初始架构文档内容产生，确定系统拓扑、技术选型与数据存储方案。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-stack-change",
+      "date": "2026-11-05",
+      "title": "调整技术路线",
+      "type": "architecture-change",
+      "note": "技术路线从 Netlify + Supabase 候选调整为 Netlify Database + Drizzle ORM + Netlify Functions。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-auth-session",
+      "date": "2026-11-14",
+      "title": "确定管理员认证安全方案",
+      "type": "feature-release",
+      "note": "生产与本地 Cookie 名称区分、32 字节 Token、仅存 SHA-256、7 天有效期。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-rate-limit",
+      "date": "2026-11-18",
+      "title": "确定限流规则",
+      "type": "feature-release",
+      "note": "每站点固定 60 秒窗口限流，默认 600，可配置范围 1–10000，并新增限流配置与计数器表。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-auth-accept",
+      "date": "2026-11-17",
+      "title": "认证安全专项验收",
+      "type": "stage-completed",
+      "note": "正式验收 T-04-15-07；测试证据包括 Cookie 11/11、Session 10/10、Admin Auth 73/73、HTTP 集成 6/6。",
+      "version": null
+    },
+    {
+      "id": "plv-site-monitor-delivery",
+      "date": "2026-11-19",
+      "title": "完成部署上线",
+      "type": "delivery",
+      "note": "部署上线并完成 Production 功能验证（T-06-06），生产闭环打通。",
+      "version": "v1.0"
+    },
+    {
+      "id": "plv-site-monitor-publish",
+      "date": "2026-11-24",
+      "title": "文档整理并发布",
+      "type": "version-update",
+      "note": "按 PLV 项目文档管理规范整理并发布项目文档。",
+      "version": null
+    }
+  ]
+}

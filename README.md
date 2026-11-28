@@ -5,27 +5,106 @@ PLV Studio（主体 `plv`）的公开数据仓库，由 `plv-studio-framework` �
 ## 目录
 
 ```
-profile.json                 品牌、作者、首页 Hero、精选、SEO
-works/index.json             作品 slug 列表（顺序即展示顺序）
-works/{slug}.json            作品元数据
-works/{slug}.md              可选补充正文
-progress.json                八阶段进度与 changelog
-skills.json                  能力与证据（可选）
-documents/{slug}/{doc-id}.md 设计文档
-engineering/index.json       工程分类、内容索引与精选标记
-engineering/{category}/*.md  工程内容正文（workflows / models / practices / standards）
-engineering/updates/index.json 工程动态记录
-images/                      封面、头像、OG 图
-_headers                     数据站点缓存与安全响应头
+profile.json                     品牌、作者、首页 Hero、SEO
+projects/index.json              项目集合索引（顺序即展示顺序）
+projects/{slug}/project.json     项目详情（状态、阶段、功能、交付、关联工程）
+projects/{slug}/changelog.json   项目开发日志
+projects/{slug}/documents/*.md   项目设计文档正文
+skills.json                      能力与证据（可选）
+engineering/index.json           工程分类、内容索引与精选标记
+engineering/{category}/*.md      工程内容正文（workflows / models / practices / standards）
+engineering/updates/index.json   工程动态记录
+images/projects/{slug}/cover.*   项目封面
+images/                          头像、OG 图
+_headers                         数据站点缓存与安全响应头
 ```
 
 ## 约定
 
-- 所有 JSON 必须包含 `"schemaVersion": "1.0"`。
+- 所有 JSON 必须包含 `"schemaVersion"`；项目相关文件使用 `"2.0"`，其余模块保持 `"1.0"`。
 - `slug` 只能使用小写字母、数字和连字符。
-- 公开仓库，不得提交 `visibility: private` 的内容。
+- 公开仓库，不得提交 `visibility` 为 `private` 或 `unlisted` 的项目。
 - 字段、枚举与校验规则以框架仓库文档 `doc V2/03-A-数据契约.md` 为准。
 - 工程内容的 `id` 与 `path` 发布后保持稳定，重命名会导致已发布链接失效。
+
+## 项目数据
+
+### 索引 `projects/index.json`
+
+`projects` 数组每项字段：
+
+| 字段 | 必填 | 说明 |
+| --- | --- | --- |
+| `id` | 是 | 项目唯一标识 |
+| `slug` | 是 | URL 标识，同时也是目录名 |
+| `title` | 是 | 项目名称 |
+| `summary` | 是 | 项目摘要 |
+| `type` | 是 | `web` / `agent` / `tool` / `software` / `other` |
+| `status` | 是 | 当前状态，见下方枚举 |
+| `featured` | 是 | 是否进入首页精选 |
+| `visibility` | 是 | `public` / `private` / `unlisted` |
+| `order` | 是 | 展示顺序 |
+| `updatedAt` | 是 | 最近更新时间 `YYYY-MM-DD` |
+
+### 详情 `projects/{slug}/project.json`
+
+在索引字段基础上还包含：`subtitle`、`description`、`techStack`、`tags`、`owner`、`maintainer`、
+`startedAt` / `releasedAt` / `updatedAt`、`cover` / `coverAlt`、`overview`、`features[]`、
+`architecture`、`stages[]`、`delivery`、`links[]`、`engineeringRefs[]`、`documents[]`。
+
+### 项目状态
+
+| 值 | 含义 |
+| --- | --- |
+| `planning` | 规划中 |
+| `developing` | 开发中 |
+| `validating` | 验证中 |
+| `delivered` | 已交付 |
+| `running` | 运行中 |
+| `iterating` | 持续迭代 |
+| `archived` | 已归档 |
+
+### 项目阶段
+
+阶段固定为六段，顺序不可变：
+
+| id | 名称 |
+| --- | --- |
+| `requirements` | 需求分析 |
+| `design` | 方案设计 |
+| `development` | 开发实现 |
+| `testing` | 测试验证 |
+| `delivery` | 交付验收 |
+| `iteration` | 运行与迭代 |
+
+阶段状态：`completed` / `in_progress` / `pending` / `skipped` / `not_applicable`。
+`applicable` 为 `false` 时状态只能是 `skipped` 或 `not_applicable`。
+
+阶段进度 = 已完成的适用阶段数 ÷ 全部适用阶段数；`skipped` 与 `not_applicable` 不计入适用阶段。
+
+### 交付形态
+
+`delivery.form` 取值：`web_deployment` / `local_application` / `agent_api` / `software_package` /
+`source_code` / `other`。
+
+### 关联工程
+
+`engineeringRefs[]` 每项为 `{ category, id }`，指向 `engineering/index.json` 中已发布的内容，
+对应页面路径为 `/engineering/{category}/{id}/`。
+
+### 项目动态 `projects/{slug}/changelog.json`
+
+`entries[]` 字段：`id`、`date`、`title`、`type`、`note`、`version`。
+`type` 取值：`project-start` / `stage-completed` / `feature-release` / `version-update` /
+`architecture-change` / `delivery` / `issue-resolved`。
+
+### 添加项目
+
+1. 在 `projects/` 下新建 `{slug}/` 目录。
+2. 编写 `project.json` 与 `changelog.json`。
+3. 把设计文档正文放入 `projects/{slug}/documents/`，并在 `project.json` 的 `documents[]` 登记。
+4. 在 `projects/index.json` 中登记项目并设置 `order`。
+5. 封面放到 `images/projects/{slug}/cover.*`。
 
 ## 工程内容
 
@@ -81,7 +160,6 @@ engineering/
 
 在仓库根目录启动服务：
 
-
 使用 Python：
 
 ```powershell
@@ -98,8 +176,8 @@ npx --yes serve . -l 4321
 
 - 数据目录：<http://127.0.0.1:4321/>
 - 站点信息：<http://127.0.0.1:4321/profile.json>
-- 作品列表：<http://127.0.0.1:4321/works/index.json>
-- 进度数据：<http://127.0.0.1:4321/progress.json>
+- 项目索引：<http://127.0.0.1:4321/projects/index.json>
+- 项目详情：<http://127.0.0.1:4321/projects/plv-studio/project.json>
 - 工程索引：<http://127.0.0.1:4321/engineering/index.json>
 - 工程动态：<http://127.0.0.1:4321/engineering/updates/index.json>
 
